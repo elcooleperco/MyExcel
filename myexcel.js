@@ -498,7 +498,7 @@ $JExcel = {
         if (cell.s) s = s + ' s="' + cell.s + '" ';
         
 		var value=cell.v;
-		if (isNaN(value)) {
+		if (typeof value !== "number") {
 			if (value.charAt(0)!='=') return s + ' t="inlineStr" ><is><t>' + escape(value) + '</t></is></c>';
 			return s+' ><f>'+value.substring(1)+'</f></c>';
         }
